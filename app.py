@@ -48,10 +48,21 @@ def add_book():
 #  takes the details from the form and adds the book to the database, then redirects to home page 
 @app.route('/insert_book', methods=['POST'])
 def insert_book():
+    
+    new_book = {
+        'Title': request.form.get('Title'),
+        'Author': request.form.get('Author'),
+        'Genre': request.form.get('Genre'),
+        'Year': request.form.get('Year'),
+        'Image_URL': request.form.get('Image_URL'),
+        'Amazon': request.form.get('Amazon'),
+        'Review': request.form.get('Review'),
+        'upvotes': 0,
+    }
     # - ------- check if it should be books or book
     books = mongo.db.books
-    books.insert_one(request.form.to_dict())
-    # ----- get books should be home page to display that het book just added is present
+    books.insert_one(new_book)
+    # ----- get books should be home page to display that the book just added is present
     return redirect(url_for('get_books'))
     
     
