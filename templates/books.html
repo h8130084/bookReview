@@ -2,14 +2,11 @@
 {% block content %}
 
     {% for book in books%}
-    {{book.Title}}
-    {{book.Author}}
-    {{book.Genre}}
-    {{book.Image_URL}}
-    {{book.Amazon}}
-    {{book.upvote}}
-    <!--{{book.Review}}-->
-    {% endfor %}
+    
+    
+   <h1> {{book.Title}}</h1> 
+    
+ {{book.upvotes}}
     
     
 <div class="row">
@@ -21,10 +18,12 @@
         <li class="tab col s3 disabled"><a href="#test4"> disabled</a></li>
       </ul>
     </div>
-    <div id="test1" class="col s12">Test 1</div>
-    <div id="test2" class="col s12">Test 2</div>
-    <div id="test3" class="col s12">Test 3</div>
-    <div id="test4" class="col s12">Test 4</div>
+    <div id="test1" class="col s12">{{book.Image_URL}}</div>
+    <div id="test2" class="col s12">{{book.Author}}<br>
+    {{book.Genre}}<br>{{book.Amazon}}<br> {{book.Year}}</div>
+    <div id="test3" class="col s12"> {{book.Review}}</div>
+    <div id="test4" class="col s12">  </div>
+    {% endfor %}
   </div>
 
 {% endblock %}

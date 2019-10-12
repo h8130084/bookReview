@@ -21,3 +21,19 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
     debug=True)
+
+
+# displays add books page
+
+@app.route('/add_book')
+def add_book():
+    return render_template('addbook.html')
+
+#  takes the details from the form and adds the book to the database, then redirects to home page 
+@app.route('/insert_book', methods=['POST'])
+def insert_book():
+    # - ------- check if it should be books or book
+    books = mongo.db.books
+    books.insert_one(request.form.to_dict())
+    # ----- get books should be home page to display that het book just added is present
+    return redirect(url_for('get_books'))
