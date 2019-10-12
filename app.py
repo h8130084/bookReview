@@ -17,13 +17,13 @@ mongo = PyMongo(app)
 def get_books():
      return render_template("books.html", books=mongo.db.book_details.find())
 
-@app.route('/edit_book/ <book_id')
+@app.route('/edit_book/<book_id>')
 def edit_book(book_id):
     the_book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     all_categories = mongo.db.categories.find()
     return render_template('editbook.html', book=the_book, categories=all_categories)
 
-@app.route('/update_book/<book_id>', method=["POST"])
+@app.route('/update_book/<book_id>', methods=["POST"])
 def update_book(book_id):
     books = mongo.db.books
     books.update( {'_id': ObjectId(book_id)},
