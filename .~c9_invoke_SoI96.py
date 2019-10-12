@@ -2,18 +2,18 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-import env
+
 
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'book_review'
-app.config["MONGO_URI"] = env.MONGO_URI
+app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 
 
 mongo = PyMongo(app)
 
 @app.route('/')
-@app.route('/ get_books')
+@app.route('/get_books')
 def get_books():
      return render_template("books.html", books=mongo.db.book_details.find())
 
@@ -39,6 +39,12 @@ def update_book(book_id):
     return redirect(url_for('get_books'))
     
 
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+    port=int(os.environ.get('PORT')),
+    debug=True)
+
+
 # displays add books page
 
 @app.route('/add_book')
@@ -55,8 +61,3 @@ def insert_book():
     return redirect(url_for('get_books'))
     
     
-    
-if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-    port=int(os.environ.get('PORT')),
-    debug=True)
