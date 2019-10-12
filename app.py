@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
+
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'book_review'
@@ -15,6 +16,12 @@ mongo = PyMongo(app)
 @app.route('/ get_books')
 def get_books():
      return render_template("books.html", books=mongo.db.book_details.find())
+
+@app.route('/edit_book/ <book_id')
+def edit_book(book_id):
+    the_book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template('editbook.html', book=the_book, categories=all_categories)
 
 
 if __name__ == '__main__':
@@ -37,3 +44,5 @@ def insert_book():
     books.insert_one(request.form.to_dict())
     # ----- get books should be home page to display that het book just added is present
     return redirect(url_for('get_books'))
+    
+    
