@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% for book in books%}
+    {{book.Title}}
+    {{book.Author}}
+    {{book.Genre}}
+    {{book.Image_URL}}
+    {{book.Amazon}}
+    {{book.upvote}}
+    <!--{{book.Review}}-->
+    {% endfor %}
+    
+{% endblock %}
