@@ -4,16 +4,16 @@
     <ul>
         {% for book in books%}
 
-        <!--{{book.upvotes}}-->
         <div class="col s12">
-            <li>{{book.Title}}
-                <li>{{book.Author}}</li>
-                <li>{{book.Genre}}</li>
-                <li>{{book.Year}}</li>
-                <li>{{book.Image_URL}}</li>
-                <li>{{book.Amazon}}</li>
-                <li>{{book.Review}}</li>
-            </li>
+            <li> <a href="{{url_for('book_info', book_id=book._id)}}">{{book.Title}}</a>
+            <!--    <li>{{book.Author}}</li>-->
+            <!--    <li>{{book.Genre}}</li>-->
+            <!--    <li>{{book.Year}}</li>-->
+            <!--    <li>{{book.Image_URL}}</li>-->
+            <!--    <li>{{book.Amazon}}</li>-->
+            <!--    <li>{{book.Review}}</li>-->
+            <!--{{book.upvotes}}-->
+            </li><br>
         </div>
 
 
