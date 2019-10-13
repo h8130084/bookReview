@@ -44,10 +44,7 @@ def book_info(book_id):
     the_book = mongo.db.book_details.find_one({"_id": ObjectId(book_id)})
     all_categories = mongo.db.categories.find()
     return render_template('bookdetails.html', book=the_book, categories=all_categories)
-    
-    
-    
-    
+
 # displays add books page
 
 @app.route('/add_book')
@@ -74,8 +71,7 @@ def insert_book():
     # ----- get books should be home page to display that the book just added is present
     return redirect(url_for('get_books'))
     
-    
-    
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
