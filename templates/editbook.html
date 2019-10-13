@@ -1,9 +1,8 @@
-{% extends 'base.html' %} {block content%}
+{% extends 'base.html' %} {% block content %}
 
-<h2> Edit Book</h2>
+<h2> Change {{book.Title}}</h2>
 <div class="row">
-    <form action="{{ url_for('update_book') }}" method="POST" class="col s12">
-
+    <form action="{{ url_for('update_book', book_id=book._id) }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">account_circle</i>
@@ -11,18 +10,13 @@
                 <label for="icon_prefix">Book Title</label>
             </div>
         </div>
-        
-<!-- -- do i need this?       -->
-<!--{% for cat in categories %}-->
-<!--{%if %}-->
 
 
-{%endfor%}
 
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">phone</i>
-                <textarea name="Author" id="Author" class="materialize-textarea">value={{book.Aurthor}}</textarea>
+                <input id="Author" name="Author" type="text" class="validate" value="{{book.Author}}">
                 <label for="icon_telephone">Author</label>
             </div>
         </div>
@@ -30,7 +24,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">phone</i>
-                <textarea name="Genre" id="Genre" class="materialize-textarea">value="{{book.Genre}}"</textarea>
+                <input name="Genre" id="Genre" type="text" class="materialize-textarea"value="{{book.Genre}}">
                 <label for="icon_telephone">Genre</label>
             </div>
         </div>
@@ -38,7 +32,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">phone</i>
-                <textarea name="Year" id="Year" class="materialize-textarea">value={{book.Year}}</textarea>
+                <input name="Year" id="Year" type="text" class="materialize-textarea"value="{{book.Year}}">
                 <label for="icon_telephone">Year of Publication</label>
             </div>
         </div>
@@ -46,7 +40,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">phone</i>
-                <textarea name="Image_URL" id="Image_URL" class="materialize-textarea">value={{book.Image_URL}}</textarea>
+                <input name="Image_URL" id="Image_URL" type="text" class="materialize-textarea"value="{{book.Image_URL}}">
                 <label for="icon_telephone">Link to cover image</label>
             </div>
         </div>
@@ -54,30 +48,26 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">phone</i>
-                <textarea name="Amazon" id="Amazon" class="materialize-textarea">value={{book.Amazon}}</textarea>
+                <input name="Amazon" id="Amazon" type="text" class="materialize-textarea"value="{{book.Amazon}}">
                 <label for="icon_telephone">Purchase</label>
             </div>
         </div>
 
         <div class="row">
-            <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea">value={{book.Review}}</textarea>
+                        <textarea id="textarea1"  type="text" class="materialize-textarea"value="{{book.Review}}"></textarea>
                         <label for="textarea1">Review</label>
                     </div>
                 </div>
-            </form>
         </div>
 
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Edit Book
+            <button class="btn waves-effect waves-light" type="submit" name="action">Confirm Changes
                 <i class="material-icons right">send</i>
             </button>
         </div>
-
-
     </form>
 </div>
 
-{% end block %}
+{% endblock %}
