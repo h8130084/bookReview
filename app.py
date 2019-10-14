@@ -71,6 +71,12 @@ def insert_book():
     # ----- get books should be home page to display that the book just added is present
     return redirect(url_for('get_books'))
     
+# delete the book
+@app.route('/delete_book/<book_id>')
+def delete_book(book_id):
+    mongo.db.book.remove({'_id': ObjectId(book_id)})
+    return redirect(url_for('get_books'))
+    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
