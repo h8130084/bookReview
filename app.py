@@ -46,7 +46,6 @@ def book_info(book_id):
     return render_template('bookdetails.html', book=the_book, categories=all_categories)
 
 # displays add books page
-
 @app.route('/add_book')
 def add_book():
     return render_template('addbook.html')
@@ -74,7 +73,7 @@ def insert_book():
 # delete the book
 @app.route('/delete_book/<book_id>')
 def delete_book(book_id):
-    mongo.db.book.remove({'_id': ObjectId(book_id)})
+    mongo.db.book_details.remove({'_id': ObjectId(book_id)})
     return redirect(url_for('get_books'))
     
 
