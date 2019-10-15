@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- taken from google fonts, materilaize and cdnjs -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='/style.css')}}" type="text/css" />
 
     <title>Document</title>
 </head>
@@ -18,26 +18,17 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                </ul>
-                <ul class="sidenav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
+                <a href="{{url_for('get_books')}}" class="brand-logo">Home</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="{{url_for('add_book')}}">Review a book!</a></li>
                 </ul>
             </div>
         </nav>
+
     </header>
 
 
-    <div class="container">
+    <div class="container" "books">
         {% block content %} {% endblock %}
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -47,16 +38,17 @@
                 $('.tabs').tabs();
                 $('#Review').val('New Text');
                 M.textareaAutoResize($('#Review'));
-                $('.sidenav').sidenav();
-
-            });
-                $(document).ready(function() {
-                      $('.sidenav').sidenav();
 
             });
         </script>
     </div>
+    
+
 </body>
 
-
+    <div class="footer">
+        <p>ddgf</p>
+        <p>3434</p>
+        <p>style test</p>
+    </div>
 </html>

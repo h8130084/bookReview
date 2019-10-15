@@ -1,0 +1,16 @@
+css wont link ? 
+
+nav bar being funny when trying to use materialize
+
+need to add image to tabs ..... do i do img src {{book.Image_URL}} pull though the
+image link and display as an image?
+
+upvotes section
+
+comments section 
+
+
+style
+
+display books in a table 
+

@@ -1,4 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
 /*body{*/
 /*    background-color: green;*/
 /*}*/
 
+.footer{
+    background-color: red;
+}
+
+
+
+
+.books{
+   background-color: red;
+   position: center;
+   position: absolute;
+ }
+
+.list_of_books{
+    text-align: center;
+    border: double;
+}
+
+/*text*/
+h1{
+  font-family: 'Raleway', sans-serif;
+}
+.sub-heading {
+  font-family: 'Raleway', sans-serif;
+}
