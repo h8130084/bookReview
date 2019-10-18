@@ -8,8 +8,12 @@
     background-color: red;
 }
 
-
-
+.coverIMG {
+  width: 100%;
+  max-width: 10px;
+  height: auto;
+  position: center;
+}
 
 .books{
    background-color: red;

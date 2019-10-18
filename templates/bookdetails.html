@@ -5,23 +5,26 @@
 <div class="row">
     <div class="col s12">
         <ul class="tabs">
-            <li class="tab col s3"><a class="active" href="#test1">Cover Image</a></li>
+            <li class="tab col s3"><a class="active" href="#test1">Review</a></li>
             <li class="tab col s3"><a href="#test2">Information</a></li>
-            <li class="tab col s3"><a href="#test3">Review</a></li>
+            <li class="tab col s3"><a  href="#test3">Cover Image</a></li>
             <li class="tab col s3 disabled"><a href="#test4"> disabled</a></li>
         </ul>
     </div>
 
-    <div id="test2" class="col s12">{{book.Author}}<br> {{book.Genre}}
-        <br>{{book.Amazon}}<br> {{book.Year}}
+    
+    <div id="test1" class="col s12" "sub-heading"> What did you think?<br>{{book.Review}}</div>
+    <div id="test2" class="col s12">Authort: {{book.Author}}<br> Genre: {{book.Genre}}
+        <br>{{book.Amazon}}<br>Year of Publication: {{book.Year}}
     </div>
-    <div id="test3" class="col s12"> {{book.Review}}</div>
+    <div class= "coverIMG" id="test3" class="col s12"> <img src="{{book.Image_URL}}"></img></div>
     <div id="test4" class="col s12"> </div>
 
-    <div id="test1" class="col s12">{{book.Image_URL}}</div>
+  
     <div><a href="{{url_for('edit_book', book_id=book._id)}}" class="waves-effect waves-light btn"> Edit</a>
     </div>
 
 </div>
 
-{{book.upvotes}} {% endblock %}
+<!--{{book.upvotes}}-->
+ {% endblock %}

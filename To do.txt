@@ -1,16 +1,14 @@
-css wont link ? 
-
 nav bar being funny when trying to use materialize
 
-need to add image to tabs ..... do i do img src {{book.Image_URL}} pull though the
-image link and display as an image?
 
-upvotes section
+ 
+and up votes
 
+Saturday
 comments section 
+and search bar
 
-
+sunday
+rearrange book info
 style
-
-display books in a table 
-
+give the review a book and edit book more appropriate icons
