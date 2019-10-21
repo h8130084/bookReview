@@ -2,29 +2,54 @@
 
 <h1> {{book.Title}}</h1>
 
-<div class="row">
+<div class="row" "tabs">
     <div class="col s12">
         <ul class="tabs">
             <li class="tab col s3"><a class="active" href="#test1">Review</a></li>
             <li class="tab col s3"><a href="#test2">Information</a></li>
-            <li class="tab col s3"><a  href="#test3">Cover Image</a></li>
-            <li class="tab col s3 disabled"><a href="#test4"> disabled</a></li>
+            <li class="tab col s3"><a href="#test3">Cover Image</a></li>
         </ul>
     </div>
 
-    
+
     <div id="test1" class="col s12" "sub-heading"> What did you think?<br>{{book.Review}}</div>
     <div id="test2" class="col s12">Authort: {{book.Author}}<br> Genre: {{book.Genre}}
         <br>{{book.Amazon}}<br>Year of Publication: {{book.Year}}
     </div>
-    <div class= "coverIMG" id="test3" class="col s12"> <img src="{{book.Image_URL}}"></img></div>
-    <div id="test4" class="col s12"> </div>
-
-  
-    <div><a href="{{url_for('edit_book', book_id=book._id)}}" class="waves-effect waves-light btn"> Edit</a>
+    <div class="coverIMG" id="test3" class="col s12"> <img src="{{book.Image_URL}}"></img>
     </div>
 
+    <div><a href="{{url_for('edit_book', book_id=book._id)}}" class="waves-effect waves-light btn"> Edit</a>
+    </div>
 </div>
 
-<!--{{book.upvotes}}-->
- {% endblock %}
+<h2>Comments</h2>
+<div class="row">
+    <form action="{{ url_for('insert_comment') }}" method="POST" class="col s12">
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="hidden" id="Title" name="Title" value="{{book._id}}">
+                <textarea id="comment" name="comment" type="text" class="materialize-textarea" class="validate"></textarea>
+                <label for="icon_prefix">Write a comment about this review!</label>
+            </div>
+        </div>
+
+        <div class="row col s6">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Comment
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+    
+ 
+
+
+{% for comment in comments %}
+    <div class="collection">
+        <div> {{comment.comment}}</div> 
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

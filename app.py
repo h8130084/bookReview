@@ -17,6 +17,7 @@ mongo = PyMongo(app)
 def get_books():
      return render_template("books.html", books=mongo.db.book_details.find())
 
+
 @app.route('/edit_book/<book_id>')
 def edit_book(book_id):
     the_book = mongo.db.book_details.find_one({"_id": ObjectId(book_id)})
@@ -45,6 +46,23 @@ def book_info(book_id):
     all_categories = mongo.db.categories.find()
     return render_template('bookdetails.html', book=the_book, categories=all_categories)
 
+def get_comments():
+     return render_template('bookdetails.html', comments=mongo.db.comments.find())
+
+#  takes the details from the form and adds the comment to the database, then redirects to bookdetails page 
+
+@app.route('/insert_comment', methods=['POST'])
+def insert_comment():
+    
+    new_comment = {
+        'bookID': request.form.get('bookID'),
+        'comment': request.form.get('comment')
+    }
+    comments = mongo.db.comments
+    comments.insert_one(new_comment)
+    # ----- get comments should be book.details page to display that the comment just added is present
+    return  redirect(url_for('get_books'))
+    
 # displays add books page
 @app.route('/add_book')
 def add_book():
@@ -75,8 +93,8 @@ def insert_book():
 def delete_book(book_id):
     mongo.db.book_details.remove({'_id': ObjectId(book_id)})
     return redirect(url_for('get_books'))
-    
 
+    
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),

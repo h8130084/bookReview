@@ -1,7 +1,5 @@
 nav bar being funny when trying to use materialize
 
-
- 
 and up votes
 
 Saturday
@@ -9,6 +7,6 @@ comments section
 and search bar
 
 sunday
-rearrange book info
+
 style
 give the review a book and edit book more appropriate icons
