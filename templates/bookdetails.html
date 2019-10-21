@@ -44,11 +44,11 @@
 </div>
 
 
-    {% for comment in comments %} {% if comments.bookID == book._id %}
+    {% for comment in comments %}
     <div class="collection">
         <div> {{comment.comment}}</div>
     </div>
-    {% endif %} 
+
     {% endfor %}
 
 

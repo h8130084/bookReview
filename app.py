@@ -44,7 +44,7 @@ def update_book(book_id):
 def book_info(book_id):
     the_book = mongo.db.book_details.find_one({"_id": ObjectId(book_id)})
     all_categories = mongo.db.categories.find()
-    return render_template('bookdetails.html', book=the_book, categories=all_categories)
+    return render_template('bookdetails.html', book=the_book, categories=all_categories, comments=mongo.db.comments.find())
 
 def get_comments():
      return render_template('bookdetails.html', comments=mongo.db.comments.find())

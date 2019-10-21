@@ -17,6 +17,16 @@ mongo = PyMongo(app)
 def get_comments():
     return render_template("bookdetails.html", comments=mongo.db.comments.find())
 
+@app.route('/book_info/<book_id>')
+def book_info(book_id):
+    the_book = mongo.db.book_details.find_one({"_id": ObjectId(book_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template('bookdetails.html', book=the_book, categories=all_categories, comments=mongo.db.comments.find())
+
+
+
+
+
 
 @app.route('/comments/<comment_id>')
 def comments(comment_id):
