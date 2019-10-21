@@ -55,10 +55,11 @@ def get_comments():
 def insert_comment():
     
     new_comment = {
-        'bookID': request.form.get('bookID'),
+        'bookID': request.form.get('Title'),
         'comment': request.form.get('comment')
     }
     comments = mongo.db.comments
+    books = mongo.db.book_review
     comments.insert_one(new_comment)
     # ----- get comments should be book.details page to display that the comment just added is present
     return  redirect(url_for('get_books'))

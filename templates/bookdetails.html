@@ -26,7 +26,7 @@
 <h2>Comments</h2>
 <div class="row">
     <form action="{{ url_for('insert_comment') }}" method="POST" class="col s12">
-        
+
         <div class="row">
             <div class="input-field col s12">
                 <input type="hidden" id="Title" name="Title" value="{{book._id}}">
@@ -41,15 +41,15 @@
             </button>
         </div>
     </form>
-    
- 
-
-
-{% for comment in comments %}
-    <div class="collection">
-        <div> {{comment.comment}}</div> 
-    </div>
-    {% endfor %}
 </div>
+
+
+    {% for comment in comments %} {% if comments.bookID == book._id %}
+    <div class="collection">
+        <div> {{comment.comment}}</div>
+    </div>
+    {% endif %} 
+    {% endfor %}
+
 
 {% endblock %}
