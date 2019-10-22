@@ -18,37 +18,40 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="{{url_for('get_books')}}" class="brand-logo">Home</a>
+                <a href="{{url_for('get_books')}}" class="brand-logo center">Home</a>
                 <ul id="nav-mobile" class="right">
                     <li><a href="{{url_for('add_book')}}">Review a book!</a></li>
-                </ul>
+
+
             </div>
         </nav>
-
+                        <nav>
+                    <div class="nav-wrapper">
+                        <form>
+                            <div class="input-field" "center">
+                                <input id="search" type="search" required>
+                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
     </header>
 
 
 
+    {% block content %} {% endblock %}
 
-
-    <div class="container" "books">
-        <div class="topnav">
-            <input type="text" placeholder="Search..">
-
-        </div>
-
-        {% block content %} {% endblock %}
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('.tabs').tabs();
-                $('#Review').val('New Text');
-                M.textareaAutoResize($('#Review'));
-
-            });
-        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.tabs').tabs();
+            $('#Review').val('New Text');
+            M.textareaAutoResize($('#Review'));
+            $('.sidenav').sidenav();
+        });
+    </script>
     </div>
 
 

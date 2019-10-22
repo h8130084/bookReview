@@ -44,12 +44,18 @@
 </div>
 
 
-    {% for comment in comments %}
-    <div class="collection">
-        <div> {{comment.comment}}</div>
-    </div>
+{% for comment in comments %}
 
-    {% endfor %}
+<table class="striped" "centered" "responsive-table">
+    <tbody>
+        <thead>
+            
+        </thead>
+        <tr>
+            <td>{{comment.comment}}</td>
+        </tr>
+    </tbody>
+</table>
 
 
-{% endblock %}
+{% endfor %} {% endblock %}
