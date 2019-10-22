@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+    <h1> Results!</h1>
+    <div class="sub-heading" "row"> Check out your results</div>
+
+
+
+    {% for book in books%} {% if book in search %}
+    <div class="collection">
+        <a href="{{url_for( 'book_info', book_id=book._id)}} " class="collection-item"> {{book.Title}}</a>
+    </div>
+    {% endif %} {% endfor %}
+
+
+
+
+    <div class="sub-heading" "row"> not found what you are looking for? Why dont you wirte a new review</div>
+
+    <div class="row" "addBookButton">
+        <form action="{{url_for('add_book')}}" class="col s12">
+            <button class="btn waves-effect waves-light" type="submit" name="action">add a book
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
