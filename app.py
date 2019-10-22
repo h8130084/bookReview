@@ -20,8 +20,9 @@ def get_books():
 @app.route('/search')
 def search():
      searched_book = request.form.get('Title')
-     searched_book.find('url_for',{'id':'Title'})
-     return render_template("search.html", books=mongo.db.book_details.find())
+     book = mongo.db.book_details.find({'Title':searched_book})
+     return render_template("search.html", book=book)
+
 
 @app.route('/edit_book/<book_id>')
 def edit_book(book_id):
@@ -64,7 +65,6 @@ def insert_comment():
         'comment': request.form.get('comment')
     }
     comments = mongo.db.comments
-    books = mongo.db.book_review
     comments.insert_one(new_comment)
     # ----- get comments should be book.details page to display that the comment just added is present
     return  redirect(url_for('get_books'))

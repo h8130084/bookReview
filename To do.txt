@@ -1,12 +1,10 @@
-nav bar being funny when trying to use materialize
+finalise nav bar
 
-and up votes
+ add up votes to each review
 
-Saturday
-comments section 
-and search bar
 
-sunday
+fix comments section  - displaying all comments on every book
+
 
 style
 give the review a book and edit book more appropriate icons
