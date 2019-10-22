@@ -2,16 +2,17 @@
 
 <div class="container">
     <h1> Results!</h1>
-    <div class="sub-heading" "row"> Check out your results</div>
+    <div class="sub-heading row"> Check out your results</div>
 
 
-{% for book in books%}
+{% for results in book %}
 
-{{book.Title}}
+
+  <div>{{results.Title}}</div>
 
 {% endfor %} 
 
-    <div class="sub-heading" "row"> not found what you are looking for? Why dont you wirte a new review</div>
+    <div class="sub-heading row"> not found what you are looking for? Why dont you wirte a new review</div>
 
     <div class="row" "addBookButton">
         <form action="{{url_for('add_book')}}" class="col s12">
