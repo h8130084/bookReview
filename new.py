@@ -28,6 +28,27 @@ def book_info(book_id):
 
 
 
+
+
+@app.route('/ search', methods= ['GET'])
+def search(book_id):
+        the_book = mongo.db.book_details.find({"Title"})
+        all_categories = mongo.db.categories.find()
+        return render_template('search.html', book=the_book, categories=all_categories)
+        
+        
+        
+        
+        
+    {% for book in books%} {% if book in search %}
+    <div class="collection">
+        <a href="{{url_for( 'book_info', book_id=book._id)}} " class="collection-item"> {{book.Title}}</a>
+    </div>
+    {% endif %} {% endfor %}
+
+        
+        
+
 @app.route('/comments/<comment_id>')
 def comments(comment_id):
     the_comment = mongo.db.comments({"_id": ObjectId(comment_id)})

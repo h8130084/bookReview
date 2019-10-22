@@ -17,11 +17,11 @@ mongo = PyMongo(app)
 def get_books():
      return render_template("books.html", books=mongo.db.book_details.find())
 
-@app.route('/ search', methods= ['GET', 'POST'])
-def search(book_id):
-        the_book = mongo.db.book_details.find({"Title"})
-        all_categories = mongo.db.categories.find()
-        return render_template('search.html', book=the_book, categories=all_categories)
+@app.route('/search')
+def search():
+     searched_book = request.form.get('Title')
+     searched_book.find('url_for',{'id':'Title'})
+     return render_template("search.html", books=mongo.db.book_details.find())
 
 @app.route('/edit_book/<book_id>')
 def edit_book(book_id):
