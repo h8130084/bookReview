@@ -7,7 +7,7 @@
 
     {% for results in book %}
     <div class="collection" methods="get">
-        <a href="{{url_for( 'search')}} " class="collection-item"> {{results.Title}}</a>
+        <a href="{{url_for( 'book_info', book_id=results._id)}} " class="collection-item"> {{results.Title}}</a>
     </div>
     {% endfor %}
 

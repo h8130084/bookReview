@@ -19,10 +19,9 @@ def get_books():
 
 @app.route('/search', methods=['GET'])
 def search():
-     searched_book = request.form.get('Title')
+     searched_book = request.args.get('Title')
      book = mongo.db.book_details.find({'Title': searched_book})
      return render_template("search.html", book=book)
-
 
 @app.route('/edit_book/<book_id>')
 def edit_book(book_id):
