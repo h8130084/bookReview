@@ -94,6 +94,19 @@ def insert_book():
     # ----- get books should be home page to display that the book just added is present
     return redirect(url_for('get_books'))
     
+#  adds one to the upvotes
+@app.route('/upvote', methods=['POST'])
+def add_upvote():
+    
+    new_upvote = {
+        'upvotes': 0,
+    }
+    books = mongo.db.book_details
+    books.insert_one(new_upvote)
+    return redirect(url_for('get_books'))
+    
+    
+    
 # delete the book
 @app.route('/delete_book/<book_id>')
 def delete_book(book_id):

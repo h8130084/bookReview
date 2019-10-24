@@ -5,12 +5,11 @@
     <div class="sub-heading row"> Check out your results</div>
 
 
-{% for results in book %}
-
-
-  <div>{{results.Title}}</div>
-
-{% endfor %} 
+    {% for results in book %}
+    <div class="collection">
+        <a href="{{url_for( 'search')}} " class="collection-item"> {{results.Title}}</a>
+    </div>
+    {% endfor %}
 
     <div class="sub-heading row"> not found what you are looking for? Why dont you wirte a new review</div>
 
