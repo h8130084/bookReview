@@ -55,6 +55,7 @@
 
 
 {% for comment in comments %}
+ {% if comment.bookID == book._id %}
 
 <table class="striped" "centered" "responsive-table">
     <tbody>
@@ -68,5 +69,5 @@
     </tbody>
 </table>
 
-
+ {% endif %}
 {% endfor %} {% endblock %}

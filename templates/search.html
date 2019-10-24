@@ -6,7 +6,7 @@
 
 
     {% for results in book %}
-    <div class="collection">
+    <div class="collection" methods="get">
         <a href="{{url_for( 'search')}} " class="collection-item"> {{results.Title}}</a>
     </div>
     {% endfor %}
