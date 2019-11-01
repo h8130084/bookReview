@@ -11,7 +11,6 @@
         </ul>
     </div>
 
-
     <div id="test1" class="col s12" "sub-heading"> What did you think?<br>{{book.Review}}</div>
     <div id="test2" class="col s12">Authort: {{book.Author}}<br> Genre: {{book.Genre}}
         <br>{{book.Amazon}}<br>Year of Publication: {{book.Year}}
@@ -19,27 +18,25 @@
     <div class="coverIMG" id="test3" class="col s12"> <img src="{{book.Image_URL}}"></img>
     </div>
 
-    <div><a href="{{url_for('edit_book', book_id=book._id)}}" class="waves-effect waves-light btn"> Edit</a>
+    <div class="row edit_button">
+        <div><a href="{{url_for('edit_book', book_id=book._id)}}" class="waves-effect waves-light btn"> Edit</a>
+        </div>
     </div>
+    
+    <a class="btn waves-effect waves-light" href="{{url_for('add_upvote', book_id=book._id)}}">Upvote {{book.upvotes}}</a>
+    <a class="btn waves-effect waves-light" href="{{book.Amazon}}">Buy Now</a>
+    
 </div>
-
-
-
-<button class="btn waves-effect waves-light" type="submit" name="action">upvote {{book.upvotes}}
-         <i class=""></i>
-</button>
-
-
 
 
 
 <h2>Comments</h2>
 <div class="row">
-    <form action="{{ url_for('insert_comment') }}" method="POST" class="col s12">
+    <form action="{{url_for('insert_comment', book_id=book._id)}}" method="POST" class="col s12">
 
         <div class="row">
             <div class="input-field col s12">
-                <input type="hidden" id="Title" name="Title" value="{{book._id}}">
+                <input type="hidden" id="bookID" name="bookID" value="{{book._id}}">
                 <textarea id="comment" name="comment" type="text" class="materialize-textarea" class="validate"></textarea>
                 <label for="icon_prefix">Write a comment about this review!</label>
             </div>
@@ -54,8 +51,7 @@
 </div>
 
 
-{% for comment in comments %}
- {% if comment.bookID == book._id %}
+{% for comment in comments %} 
 
 <table class="striped" "centered" "responsive-table">
     <tbody>
@@ -69,5 +65,4 @@
     </tbody>
 </table>
 
- {% endif %}
-{% endfor %} {% endblock %}
+ {% endfor %} {% endblock %}

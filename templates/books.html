@@ -2,19 +2,13 @@
 
 <div class="container">
     <h1> Welcome!</h1>
-    <div class="sub-heading" "row"> Welcome to a book review site! Here you can read a book review by others or write your own review.</div>
-
-
+    <div class="sub-heading row"> Welcome to a book review site! Here you can read a book review by others or write your own review.</div>
 
     {% for book in books%}
-
     <div class="collection">
         <a href="{{url_for( 'book_info', book_id=book._id)}} " class="collection-item"> {{book.Title}}</a> 
     </div>
-
     {% endfor %}
-
-
 
     <div class="row" "addBookButton">
         <form action="{{url_for('add_book')}}" class="col s12">
@@ -24,7 +18,6 @@
         </form>
     </div>
 
-</div>
 </div>
 
 {% endblock %}

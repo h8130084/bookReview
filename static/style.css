@@ -13,11 +13,9 @@
    position: absolute;
  }
 
-.list_of_books{
-    text-align: center;
-    border: double;
+.edit_button{
+    margin: 30px;
 }
-
 .tabs{
     position: center;
     position: relative;
@@ -31,5 +29,3 @@ h1{
 .sub-heading {
   font-family: 'Raleway', sans-serif;
 }
-
-

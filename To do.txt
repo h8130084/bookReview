@@ -1,10 +1,19 @@
-finalise nav bar
-
- add up votes to each review
-
-
-fix comments section  - displaying all comments on every book
-
-
 style
 give the review a book and edit book more appropriate icons
+base - done
+books - done
+search - done
+bookdetails - 
+
+add book - 
+click here to buy?
+
+editbook - 
+fix the overwrite of the current review with "NEW TEXT"
+
+
+ADD CUSTOM CSS???
+
+ask dfo i need JS when i have JQuery
+
+deploy to heroku

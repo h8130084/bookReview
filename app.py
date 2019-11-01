@@ -49,24 +49,23 @@ def update_book(book_id):
 def book_info(book_id):
     the_book = mongo.db.book_details.find_one({"_id": ObjectId(book_id)})
     all_categories = mongo.db.categories.find()
-    return render_template('bookdetails.html', book=the_book, categories=all_categories, comments=mongo.db.comments.find())
+    
+    comments = mongo.db.comments.find({'bookID': book_id})
+    
+    return render_template('bookdetails.html', book=the_book, categories=all_categories, comments=comments)
 
-def get_comments():
-     return render_template('bookdetails.html', comments=mongo.db.comments.find())
 
-#  takes the details from the form and adds the comment to the database, then redirects to bookdetails page 
-
-@app.route('/insert_comment', methods=['POST'])
-def insert_comment():
+@app.route('/insert_comment/<book_id>', methods=['POST'])
+def insert_comment(book_id):
     
     new_comment = {
-        'bookID': request.form.get('Title'),
+        'bookID': request.form.get('bookID'),
         'comment': request.form.get('comment')
     }
     comments = mongo.db.comments
     comments.insert_one(new_comment)
-    # ----- get comments should be book.details page to display that the comment just added is present
-    return  redirect(url_for('get_books'))
+    
+    return  redirect(url_for('book_info', book_id=book_id))
     
 # displays add books page
 @app.route('/add_book')
@@ -94,15 +93,14 @@ def insert_book():
     return redirect(url_for('get_books'))
     
 #  adds one to the upvotes
-@app.route('/upvote', methods=['POST'])
-def add_upvote():
+@app.route('/upvote/<book_id>')
+def add_upvote(book_id):
     
-    new_upvote = {
-        'upvotes': 0,
-    }
     books = mongo.db.book_details
-    books.insert_one(new_upvote)
-    return redirect(url_for('get_books'))
+    book = books.find_one({'_id': ObjectId(book_id)})
+    mongo.db.book_details.update({'_id': ObjectId(book_id)}, {'$set': {'upvotes': book['upvotes'] + 1}})
+    
+    return redirect(url_for('book_info', book_id=book_id))
     
     
     
