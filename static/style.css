@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
-/*.coverIMG {*/
-/*  width: 100%;*/
-/*  max-width: 10px;*/
-/*  height: auto;*/
-/*  position: center;*/
-/*}*/
-
+/*text*/
+h1, h2, h3, h4{
+  font-family: 'Raleway', sans-serif;
+}
+.sub-heading {
+  font-family: 'Raleway', sans-serif;
+}
 .books{
    background-color: red;
    position: center;
@@ -19,13 +19,23 @@
 .tabs{
     position: center;
     position: relative;
+    margin-bottom: 15px;
 }
 
 
-/*text*/
-h1{
-  font-family: 'Raleway', sans-serif;
+/*used to make footer stay at bottom*/
+/*----> stackoverflow provided ideas around how this would work<----*/
+
+html, body{ height:100%; margin:0; }
+
+footer{ height:210px; }
+
+body{ 
+  display:flex; 
+  flex-direction:column; 
 }
-.sub-heading {
-  font-family: 'Raleway', sans-serif;
+
+footer{
+  margin-top:auto; 
 }
+

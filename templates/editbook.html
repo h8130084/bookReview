@@ -5,7 +5,7 @@
     <form action="{{ url_for('update_book', book_id=book._id) }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <i class="material-icons prefix">account_circle</i>
+                <i class="material-icons prefix">title</i>
                 <input id="Title" name="Title" type="text" class="validate" value="{{book.Title}}">
                 <label for="icon_prefix">Book Title</label>
             </div>
@@ -13,7 +13,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">phone</i>
+                <i class="material-icons prefix">account_circle</i>
                 <input id="Author" name="Author" type="text" class="validate" value="{{book.Author}}">
                 <label for="icon_telephone">Author</label>
             </div>
@@ -21,7 +21,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">phone</i>
+                <i class="material-icons prefix">flash_on</i>
                 <input name="Genre" id="Genre" type="text" class="materialize-textarea" value="{{book.Genre}}">
                 <label for="icon_telephone">Genre</label>
             </div>
@@ -29,7 +29,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">phone</i>
+                <i class="material-icons prefix">date_range</i>
                 <input name="Year" id="Year" type="text" class="materialize-textarea" value="{{book.Year}}">
                 <label for="icon_telephone">Year of Publication</label>
             </div>
@@ -37,23 +37,23 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">phone</i>
+                <i class="material-icons prefix">image</i>
                 <input name="Image_URL" id="Image_URL" type="text" class="materialize-textarea" value="{{book.Image_URL}}">
-                <label for="icon_telephone">Link to cover image</label>
+                <label for="icon_telephone">Copy and paste the link to the image address here!</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">phone</i>
+                <i class="material-icons prefix">shopping_cart</i>
                 <input name="Amazon" id="Amazon" type="text" class="materialize-textarea" value="{{book.Amazon}}">
-                <label for="icon_telephone">Purchase</label>
+                <label for="icon_telephone">Link to Amazon.co.uk</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">phone</i>
+                <i class="material-icons prefix">text_format</i>
                 <textarea name="Review" id="Review" type="text" class="materialize-textarea" value="{{book.Review}}"></textarea>
                 <label for="icon_telephone">Review</label>
             </div>

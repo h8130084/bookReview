@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1> {{book.Title}}</h1>
+<h2 class="truncate"> {{book.Title}}</h2>
 
 <div class="row" "tabs">
     <div class="col s12">
@@ -10,24 +10,28 @@
             <li class="tab col s3"><a href="#test3">Cover Image</a></li>
         </ul>
     </div>
-
-    <div id="test1" class="col s12" "sub-heading"> What did you think?<br>{{book.Review}}</div>
-    <div id="test2" class="col s12">Authort: {{book.Author}}<br> Genre: {{book.Genre}}
-        <br>{{book.Amazon}}<br>Year of Publication: {{book.Year}}
+    <div id="test1" class="col s12" "sub-heading">
+        <h4> What did you think?</h4> <br>{{book.Review}}
+    </div>
+    <div id="test2" class="col s12">
+        <h4>Author:</h4> {{book.Author}}<br>
+        <h4>Genre:</h4> {{book.Genre}}
+        <br>
+        <h4>Year of Publication:</h4> {{book.Year}}
     </div>
     <div class="coverIMG" id="test3" class="col s12"> <img src="{{book.Image_URL}}"></img>
     </div>
-
-    <div class="row edit_button">
-        <div><a href="{{url_for('edit_book', book_id=book._id)}}" class="waves-effect waves-light btn"> Edit</a>
-        </div>
-    </div>
-    
-    <a class="btn waves-effect waves-light" href="{{url_for('add_upvote', book_id=book._id)}}">Upvote {{book.upvotes}}</a>
-    <a class="btn waves-effect waves-light" href="{{book.Amazon}}">Buy Now</a>
-    
 </div>
 
+<div class="row edit_button">
+    <div><a href="{{url_for('edit_book', book_id=book._id)}}" class="waves-effect waves-light btn"> Edit</a>
+    </div>
+</div>
+
+<div class="row">
+    <a class="btn waves-effect waves-light" href="{{url_for('add_upvote', book_id=book._id)}}">Upvote {{book.upvotes}}</a>
+    <a class="btn waves-effect waves-light" href="{{book.Amazon}}" target="_blank">Buy Now</a>
+</div>
 
 
 <h2>Comments</h2>
@@ -51,7 +55,7 @@
 </div>
 
 
-{% for comment in comments %} 
+{% for comment in comments %}
 
 <table class="striped" "centered" "responsive-table">
     <tbody>
@@ -65,4 +69,4 @@
     </tbody>
 </table>
 
- {% endfor %} {% endblock %}
+{% endfor %} {% endblock %}

@@ -1,12 +1,9 @@
 style
-give the review a book and edit book more appropriate icons
-base - done
-books - done
-search - done
-bookdetails - 
 
-add book - 
-click here to buy?
+why does it then move my footer?
+<footer class="page-footer card-panel teal lighten-2" >
+
+
 
 editbook - 
 fix the overwrite of the current review with "NEW TEXT"
