@@ -22,13 +22,15 @@ h1, h2, h3, h4{
     margin-bottom: 15px;
 }
 
-
 /*used to make footer stay at bottom*/
-/*----> stackoverflow provided ideas around how this would work<----*/
+/*----> stackoverflow provided ideas around how this would work amended accordingly for website<----*/
 
 html, body{ height:100%; margin:0; }
 
-footer{ height:210px; }
+footer{ 
+    height:210px;
+    margin-top: 10px;
+}
 
 body{ 
   display:flex; 

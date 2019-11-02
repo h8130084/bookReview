@@ -11,6 +11,6 @@ fix the overwrite of the current review with "NEW TEXT"
 
 ADD CUSTOM CSS???
 
-ask dfo i need JS when i have JQuery
+ask do i need JS when i have JQuery
 
 deploy to heroku

@@ -16,8 +16,9 @@
 
 <body>
     <header>
+          <!-- used materilaize framework -->
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper teal lighten-2">
                 <a href="{{url_for('get_books')}}" class="brand-logo center">Home</a>
                 <ul id="nav-mobile" class="right">
                     <li><a href="{{url_for('add_book')}}">Review a book!</a></li>
@@ -25,7 +26,7 @@
             </div>
         </nav>
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper teal lighten-2">
                 <form action="{{ url_for('search') }}" method="GET">
                     <div class="input-field">
                         <input id="search" type="search" name="Title" required>
@@ -52,7 +53,8 @@
     </div>
 </body>
 
-<footer class="page-footer" >
+<!-- used materilaize framework -->
+<footer class="page-footer teal lighten-2" >
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

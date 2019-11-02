@@ -32,6 +32,7 @@ def edit_book(book_id):
 @app.route('/update_book/<book_id>', methods=["POST"])
 def update_book(book_id):
     books = mongo.db.book_details
+    book = books.find_one({'_id': ObjectId(book_id)})
     books.update( {'_id': ObjectId(book_id)},
     {
         'Title': request.form.get('Title'),
@@ -40,7 +41,9 @@ def update_book(book_id):
         'Year': request.form.get('Year'),
         'Image_URL': request.form.get('Image_URL'),
         'Amazon': request.form.get('Amazon'),
-        'Review': request.form.get('Review')
+        'Review': request.form.get('Review'),
+        'upvotes': book['upvotes']
+        
     })
     return redirect(url_for('get_books'))
 
