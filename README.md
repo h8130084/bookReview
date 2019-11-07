@@ -123,12 +123,12 @@ the link, if it wasn’t it would add it , if it was it wouldn’t.
 
 The deployment was completed through Github with regular commits.
 
+I used heroku to create an app. I had to change my app.py file in order to deploy to heroku. I changed the debug mode to False.
+I had to update the requirements file in order to help deploy to heroku as Flask_pymongo was missing. 
+Created a Procfile to tell heroku I am running a python webapp. I had to link my herkou with my github. Once linked up I had to 
+ensure my PORT and IP and Config Vars  all had hte relevant information in. Finally I restarted the dynos. 
 
-herkou app
-rationale for using heroku and ?github?
 
-procfiles
-turning off debug mode----evn.py
 
 # Credits and media
 
