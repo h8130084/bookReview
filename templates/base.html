@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='/style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Document</title>
 </head>
 
 <body>
     <header>
-          <!-- used materilaize framework -->
+        <!-- used materilaize framework -->
         <nav>
             <div class="nav-wrapper teal lighten-2">
                 <a href="{{url_for('get_books')}}" class="brand-logo center">Home</a>
@@ -44,9 +45,9 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $('.tabs').tabs();
-                $('#Review').val('New Text');
                 M.textareaAutoResize($('#Review'));
-                $('.sidenav').sidenav();
+
+
             });
         </script>
     </div>
@@ -54,7 +55,7 @@
 </body>
 
 <!-- used materilaize framework -->
-<footer class="page-footer teal lighten-2" >
+<footer class="page-footer teal lighten-2">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -64,7 +65,8 @@
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Partners</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!"> Non working link  that could be used to link to partner websites</a></li>
+                    <li><a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a></li>
 
                 </ul>
             </div>

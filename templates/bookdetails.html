@@ -25,7 +25,11 @@
 
 <div class="row">
     <a class="btn waves-effect waves-light" href="{{url_for('add_upvote', book_id=book._id)}}">Upvote the review! {{book.upvotes}}</a>
+    
+    {% if book.Amazon %}
      <a class="btn waves-effect waves-light" href="{{book.Amazon}}" target="_blank">Buy Now</a>
+    {% endif %}
+     
 </div>
 
 <div class="row edit_button">
