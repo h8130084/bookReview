@@ -48,14 +48,12 @@ This feature is clear and users should be able to navigate around the site with 
 
 The site has forms to allow users to Create, Edit and Delete book reviews.
 
-pre populated with data-----
-
-buy book from amazon
+The site has a feature to link to a website to buy a book, which is hidden if ther is no link.
 
 The site has a comments feature that allowes users to write a comment about the review and then displays it on the relevant review page.
 There is also a button for upvotes so users can quickly glance at how popular the review has been.
 
-The footer provides a brief description around the purpose of the website and give a link as a potential idea for future partners. ---- social media links
+The footer provides a brief description around the purpose of the website and give a link as a potential idea for future partners with social media links.
 
 
 # Technologies used
